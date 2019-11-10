@@ -2,6 +2,9 @@ Revision history for P5chomp
 
 {{$NEXT}}
 
+0.0.6  2019-11-10T13:49:25+01:00
+    - changed Perl 6 to Raku, and Perl 5 to Perl
+
 0.0.5  2018-05-20T00:16:04+02:00
     - Added original Perl 5 documentation
 

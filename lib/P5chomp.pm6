@@ -1,6 +1,6 @@
 use v6.c;
 
-unit module P5chomp:ver<0.0.5>:auth<cpan:ELIZABETH>;
+unit module P5chomp:ver<0.0.6>:auth<cpan:ELIZABETH>;
 
 proto sub chomp(|) is export {*}
 multi sub chomp() { chomp CALLERS::<$_>     }
@@ -41,7 +41,7 @@ multi sub chop(\s) {
 
 =head1 NAME
 
-P5chomp - Implement Perl 5's chomp() / chop() built-ins
+P5chomp - Implement Perl's chomp() / chop() built-ins
 
 =head1 SYNOPSIS
 
@@ -51,18 +51,18 @@ P5chomp - Implement Perl 5's chomp() / chop() built-ins
   chomp @a;
   chomp %h;
   chomp($a,$b);
-  chomp();   # bare chomp may be compilation error to prevent P5isms in Perl 6
+  chomp();   # bare chomp may be compilation error to prevent P5isms in Raku
 
   chop $a;
   chop @a;
   chop %h;
   chop($a,$b);
-  chop();      # bare chop may be compilation error to prevent P5isms in Perl 6
+  chop();      # bare chop may be compilation error to prevent P5isms in Raku
 
 =head1 DESCRIPTION
 
 This module tries to mimic the behaviour of the C<chomp> and C<chop> functions
-of Perl 5 as closely as possible.
+of Perl as closely as possible.
 
 =head1 ORIGINAL PERL 5 DOCUMENTATION
 
@@ -131,9 +131,9 @@ Pull Requests are welcome.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2018 Elizabeth Mattijsen
+Copyright 2018-2019 Elizabeth Mattijsen
 
-Re-imagined from Perl 5 as part of the CPAN Butterfly Plan.
+Re-imagined from Perl as part of the CPAN Butterfly Plan.
 
 This library is free software; you can redistribute it and/or modify it under the Artistic License 2.0.
 

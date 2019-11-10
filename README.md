@@ -1,9 +1,7 @@
-[![Build Status](https://travis-ci.org/lizmat/P5chomp.svg?branch=master)](https://travis-ci.org/lizmat/P5chomp)
-
 NAME
 ====
 
-P5chomp - Implement Perl 5's chomp() / chop() built-ins
+P5chomp - Implement Perl's chomp() / chop() built-ins
 
 SYNOPSIS
 ========
@@ -14,18 +12,18 @@ SYNOPSIS
     chomp @a;
     chomp %h;
     chomp($a,$b);
-    chomp();   # bare chomp may be compilation error to prevent P5isms in Perl 6
+    chomp();   # bare chomp may be compilation error to prevent P5isms in Raku
 
     chop $a;
     chop @a;
     chop %h;
     chop($a,$b);
-    chop();      # bare chop may be compilation error to prevent P5isms in Perl 6
+    chop();      # bare chop may be compilation error to prevent P5isms in Raku
 
 DESCRIPTION
 ===========
 
-This module tries to mimic the behaviour of the `chomp` and `chop` functions of Perl 5 as closely as possible.
+This module tries to mimic the behaviour of the `chomp` and `chop` functions of Perl as closely as possible.
 
 ORIGINAL PERL 5 DOCUMENTATION
 =============================
@@ -96,9 +94,9 @@ Source can be located at: https://github.com/lizmat/P5chomp . Comments and Pull 
 COPYRIGHT AND LICENSE
 =====================
 
-Copyright 2018 Elizabeth Mattijsen
+Copyright 2018-2019 Elizabeth Mattijsen
 
-Re-imagined from Perl 5 as part of the CPAN Butterfly Plan.
+Re-imagined from Perl as part of the CPAN Butterfly Plan.
 
 This library is free software; you can redistribute it and/or modify it under the Artistic License 2.0.
 
