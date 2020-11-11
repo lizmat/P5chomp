@@ -1,4 +1,4 @@
-use v6.c;
+use v6.*;
 use Test;
 use P5chomp;
 
@@ -9,7 +9,7 @@ is chop($a), "b", 'did we chop one';
 is $a, "a",       'did we actually chop';
 
 $_ = "bc";
-is chop(), "c", 'did we chop one';
+is .&chop, "c", 'did we chop one';
 is $_, "b",     'did we actually chop';
 
 my @a = "ab","bc";

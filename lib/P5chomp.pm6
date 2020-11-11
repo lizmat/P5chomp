@@ -1,6 +1,6 @@
-use v6.c;
+use v6.d;
 
-unit module P5chomp:ver<0.0.6>:auth<cpan:ELIZABETH>;
+unit module P5chomp:ver<0.0.7>:auth<cpan:ELIZABETH>;
 
 proto sub chomp(|) is export {*}
 multi sub chomp() { chomp CALLERS::<$_>     }
@@ -41,7 +41,7 @@ multi sub chop(\s) {
 
 =head1 NAME
 
-P5chomp - Implement Perl's chomp() / chop() built-ins
+Raku port of Perl's chomp() / chop() built-ins
 
 =head1 SYNOPSIS
 
@@ -61,8 +61,8 @@ P5chomp - Implement Perl's chomp() / chop() built-ins
 
 =head1 DESCRIPTION
 
-This module tries to mimic the behaviour of the C<chomp> and C<chop> functions
-of Perl as closely as possible.
+This module tries to mimic the behaviour of the Perl's C<chomp> and C<chop>
+built-ins in Raku as closely as possible.
 
 =head1 ORIGINAL PERL 5 DOCUMENTATION
 
@@ -122,6 +122,23 @@ of Perl as closely as possible.
             $a, $b" is interpreted as "chomp($a), $b" rather than as
             "chomp($a, $b)".
 
+=head1 PORTING CAVEATS
+
+In future language versions of Raku, it will become impossible to access the
+C<$_> variable of the caller's scope, because it will not have been marked as
+a dynamic variable.  So please consider changing:
+
+    chomp;
+
+to either:
+
+    chomp($_);
+
+or, using the subroutine as a method syntax, with the prefix C<.> shortcut
+to use that scope's C<$_> as the invocant:
+
+    .&chomp;
+
 =head1 AUTHOR
 
 Elizabeth Mattijsen <liz@wenzperl.nl>
@@ -131,7 +148,7 @@ Pull Requests are welcome.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2018-2019 Elizabeth Mattijsen
+Copyright 2018-2020 Elizabeth Mattijsen
 
 Re-imagined from Perl as part of the CPAN Butterfly Plan.
 

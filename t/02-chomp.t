@@ -1,4 +1,4 @@
-use v6.c;
+use v6.*;
 use Test;
 use P5chomp;
 
@@ -11,9 +11,9 @@ is chomp($a), 0, 'did we chomp nothing';
 is $a, "a",      'did we actually leave it';
 
 $_ = "b\n";
-is chomp(), 1, 'did we chomp one';
+is .&chomp, 1, 'did we chomp one';
 is $_, "b",    'did we actually chomp';
-is chomp(), 0, 'did we chomp nothing';
+is .&chomp, 0, 'did we chomp nothing';
 is $_, "b",    'did we actually leave it';
 
 my @a = "a\n","b\n";

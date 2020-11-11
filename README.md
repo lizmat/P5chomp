@@ -1,7 +1,7 @@
 NAME
 ====
 
-P5chomp - Implement Perl's chomp() / chop() built-ins
+Raku port of Perl's chomp() / chop() built-ins
 
 SYNOPSIS
 ========
@@ -23,7 +23,7 @@ SYNOPSIS
 DESCRIPTION
 ===========
 
-This module tries to mimic the behaviour of the `chomp` and `chop` functions of Perl as closely as possible.
+This module tries to mimic the behaviour of the Perl's `chomp` and `chop` built-ins in Raku as closely as possible.
 
 ORIGINAL PERL 5 DOCUMENTATION
 =============================
@@ -84,6 +84,21 @@ ORIGINAL PERL 5 DOCUMENTATION
             $a, $b" is interpreted as "chomp($a), $b" rather than as
             "chomp($a, $b)".
 
+PORTING CAVEATS
+===============
+
+In future language versions of Raku, it will become impossible to access the `$_` variable of the caller's scope, because it will not have been marked as a dynamic variable. So please consider changing:
+
+    chomp;
+
+to either:
+
+    chomp($_);
+
+or, using the subroutine as a method syntax, with the prefix `.` shortcut to use that scope's `$_` as the invocant:
+
+    .&chomp;
+
 AUTHOR
 ======
 
@@ -94,7 +109,7 @@ Source can be located at: https://github.com/lizmat/P5chomp . Comments and Pull 
 COPYRIGHT AND LICENSE
 =====================
 
-Copyright 2018-2019 Elizabeth Mattijsen
+Copyright 2018-2020 Elizabeth Mattijsen
 
 Re-imagined from Perl as part of the CPAN Butterfly Plan.
 
