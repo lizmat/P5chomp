@@ -22,4 +22,4 @@ ok chop(%h) eq any(<b c>), 'did we chop all values';
 is %h<a>, "a",   'did we actually chop a';
 is %h<b>, "b",   'did we actually chop b';
 
-# vim: ft=perl6 expandtab sw=4
+# vim: expandtab shiftwidth=4

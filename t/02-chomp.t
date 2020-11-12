@@ -32,4 +32,4 @@ is chomp(%h), 0, 'did we chomp no values';
 is %h<a>, "a",   'did we actually leave a';
 is %h<b>, "b",   'did we actually leave b';
 
-# vim: ft=perl6 expandtab sw=4
+# vim: expandtab shiftwidth=4
